@@ -1,12 +1,12 @@
-# REQUIRED PACKAGES:
-# opencv-python
-
 #imports required packages
 import cv2
 import numpy as np
 
+#initilizing variables
+CAMERANUM = 0 #variable changes the default camera choice
+
 #routes video capture to variable
-cap = cv2.VideoCapture(0+cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(CAMERANUM, cv2.CAP_DSHOW)
 
 #while loop that loops the frames from the camera input and display them in a window until the escape key is pressed
 while True:
@@ -36,4 +36,3 @@ while True:
     
 cv2.destroyAllWindows()
 
-# test push
