@@ -1,0 +1,1 @@
+* Adding requirements.txt, to add dependencies you run "pip install -r requirements.txt"
