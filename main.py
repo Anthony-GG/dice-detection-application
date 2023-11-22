@@ -1,6 +1,10 @@
 #imports required packages
 import cv2
 import numpy as np
+import tensorflow as tf
+
+#loading model for digit recognition
+model = tf.keras.models.load_model('digit_recognition_model.h5')
 
 #initilizing variables
 CAMERANUM = 0 #variable changes the default camera choice
@@ -26,6 +30,13 @@ while True:
     mask = cv2.inRange(hsv, lower_white, upper_white)
 
     result = cv2.bitwise_and(frame_copy, frame_copy, mask=mask)
+
+    # makes a digit prediction value based on the given digit
+    digit_prediction = model.predict(mask)
+
+    # overlays the predicted digit a frame
+    cv2.putText(frame, str(digit_prediction.argmax()), (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2)
+    cv2.imshow("Digit Recognition", frame_copy)
 
     cv2.imshow("Masked", mask)
     cv2.imshow("Camera Window", frame_copy)
