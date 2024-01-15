@@ -1,1 +1,1 @@
-* Adding requirements.txt, to add dependencies you run "pip install -r requirements.txt"
+* Adding requirements.txt, but to install packages easier, just run the install-packages.bat file as an admin.
