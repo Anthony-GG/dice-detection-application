@@ -32,10 +32,10 @@ while True:
     result = cv2.bitwise_and(frame_copy, frame_copy, mask=mask)
 
     # makes a digit prediction value based on the given digit
-    digit_prediction = model.predict(mask)
+    # digit_prediction = model.predict(mask)
 
     # overlays the predicted digit a frame
-    cv2.putText(frame, str(digit_prediction.argmax()), (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2)
+    # cv2.putText(frame, str(digit_prediction.argmax()), (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 2)
     cv2.imshow("Digit Recognition", frame_copy)
 
     cv2.imshow("Masked", mask)
